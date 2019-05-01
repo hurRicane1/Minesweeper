@@ -18,8 +18,7 @@ namespace Minesweeper
 
         //For Auto Game
         public int value;
-        public int numberOfClosedNeighbours = 0;
-        public int numberOfFlags = 0;
+        public bool toCheck;
 
     }
 }

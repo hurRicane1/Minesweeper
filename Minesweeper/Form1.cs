@@ -43,6 +43,7 @@ namespace Minesweeper
                     button.FlatStyle = FlatStyle.Flat;
                     button.BackColor = Color.Silver;
                     button.value = 9;
+                    button.toCheck = true;
                     if (random.Next(0, 100) <= diff && minesCount < maxMine)
                     {
                         button.isBomb = true;
@@ -79,6 +80,7 @@ namespace Minesweeper
                     }
                     else
                     {
+                        button.BackColor = Color.Red;
                         Explode();
                     }
                 }
@@ -109,7 +111,7 @@ namespace Minesweeper
             timer1.Start();
             IsTheGameWon();
         }
-        void Explode()
+        bool Explode()
         {
             foreach(ButtonExtend button in allFields)
             {
@@ -126,6 +128,7 @@ namespace Minesweeper
                 field.Enabled = false;
                 field.isClickable = false;
             }
+            return true;
         }
 
         int FindBombsAround(int xEmpty, int yEmpty)
