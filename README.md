@@ -1,3 +1,3 @@
 # Minesweeper
-Implementation of famous game - MineSweeper.
+MineSweeper for DevCom
 Press F3 to make Auto move.
